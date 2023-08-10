@@ -1,35 +1,31 @@
 "use client";
-import Image from "next/image";
-import lightBulb from "../../public/light-bulb.svg";
-import darkBulb from "../../public/dark-bulb.svg";
-import { useEffect, useState } from "react";
+import Bulb from "../../public/light-bulb.svg";
+import { useContext } from "react";
+import { ThemeContext } from "./ClientLayout";
+import { setGlobalStyle } from "@/lib/set-global-style";
 
 export default function LightBulb() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const { theme, setTheme } = useContext(ThemeContext);
 
-  // useEffect(() => {
-  //   const isDark = window.matchMedia("(prefers-color-scheme: dark)");
-  //   setTheme(isDark.matches ? "dark" : "light");
-  // }, []);
-
-  useEffect(() => {
-    theme === "dark"
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
-  }, [theme]);
-
-  function handleThemeChange() {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
+  function handleThemeChange2() {
+    if (theme === "dark") {
+      setTheme("light");
+      localStorage.setItem("darkMode", "disabled");
+      setGlobalStyle("light");
+    } else {
+      setTheme("dark");
+      localStorage.setItem("darkMode", "enabled");
+      setGlobalStyle("dark");
+    }
   }
 
-  const bulb = theme === "dark" ? lightBulb : darkBulb;
-
   return (
-    <Image
-      src={bulb}
+    <Bulb
       alt="lightbulb"
-      className="absolute top-0 right-0 m-2"
-      onClick={handleThemeChange}
+      className="justify-self-end self-center mr-1"
+      onClick={handleThemeChange2}
+      width={30}
+      height={30}
     />
   );
 }

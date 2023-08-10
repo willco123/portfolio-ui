@@ -1,7 +1,7 @@
 import { getMdData } from "@/lib/read-markdown";
 import { JSDOM } from "jsdom";
 import DOMPurify from "dompurify";
-import Content from "@/components/Content";
+import AboutContent from "@/components/AboutContent";
 
 const pageId = "about";
 const markDownDir = "/src/markdown-data";
@@ -13,5 +13,5 @@ export default async function Page() {
   const window = new JSDOM("").window;
   const purify = DOMPurify(window);
   const cleanHtml = purify.sanitize(contentHtml);
-  return <Content contentHtml={cleanHtml} />;
+  return <AboutContent contentHtml={cleanHtml} />;
 }

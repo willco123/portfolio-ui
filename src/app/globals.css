@@ -2,24 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/*determined by foreground-rgb*/
+path {
+  fill: currentColor;
+}
+
+a:hover {
+  color: var(--softblue);
+}
+/* Incase script injection fails have backup here*/
 :root {
+  --softblue: #86a8d0;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 205, 205, 205;
   --background-end-rgb: 220, 220, 220;
-}
-
-:root.dark {
-  --foreground-rgb: 235, 235, 235;
-  --background-start-rgb: 50, 50, 50;
-  --background-end-rgb: 35, 35, 35;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 235, 235, 235;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --test: 220, 220, 220;
 }
 
 body {
@@ -31,3 +28,26 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* svg {
+  fill: currentColor;
+} */
+
+/* path:hover {
+  color: var(--softblue);
+} */
+
+/* :root.dark {
+  --softblue: #366b9e;
+  --foreground-rgb: 235, 235, 235;
+  --background-start-rgb: 50, 50, 50;
+  --background-end-rgb: 35, 35, 35;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 235, 235, 235;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */

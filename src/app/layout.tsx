@@ -1,8 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import LightBulb from "../components/LightBulb";
-import Menu from "@/components/Menu";
-import { getRouteIds } from "@/lib/get-routes";
+import InjectTheme from "@/components/InjectTheme";
+import ClientLayout from "@/components/ClientLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,18 +13,32 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
-  const ids = getRouteIds();
+  const routeIds = [{ id: "about" }, { id: "projects" }, { id: "contact" }];
+
   return (
-    <html className="dark" lang="en">
-      <body className={inter.className}>
-        <main className="flex min-h-screen flex-col gap-2 p-24 justify-center ">
-          <LightBulb />
-          <Menu ids={ids}>{children}</Menu>
-        </main>
-      </body>
-    </html>
+    <>
+      <head>
+        <InjectTheme />
+      </head>
+      <html lang="en">
+        <body
+          className={`${inter.className} relative min-h-screen py-20 p-10 flex flex-col gap-5 justify-center`}
+        >
+          <ClientLayout ids={routeIds}>{children}</ClientLayout>
+          {modal}
+        </body>
+      </html>
+    </>
   );
 }
+
+// style={{
+//   color: "rgb(var(--foreground-rgb))",
+//   background:
+//     "linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)))",
+// }}

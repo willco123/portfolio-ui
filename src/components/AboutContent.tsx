@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import profile from "../../public/BOC.jpg";
 import Image from "next/image";
 
-export default function Content({ contentHtml }: { contentHtml: string }) {
+export default function AboutContent({ contentHtml }: { contentHtml: string }) {
   const [showContent, setShowContent] = useState(false);
   useEffect(() => {
     setShowContent(true);
@@ -13,10 +13,10 @@ export default function Content({ contentHtml }: { contentHtml: string }) {
       className={`flex flex-col md:flex-row-reverse ${
         showContent
           ? "opacity-100 duration-2000 ease-in transition"
-          : "opacity-0 "
+          : "opacity-100 "
       }`}
     >
-      <section className="self-center">
+      <section className="self-center ">
         <Image
           src={profile}
           alt="Picture of the author"
@@ -24,11 +24,12 @@ export default function Content({ contentHtml }: { contentHtml: string }) {
           style={{
             width: "200px",
             height: "300px",
+            overflow: "hidden",
           }}
         />
       </section>
       <article
-        className="flex-1 text-center border col-span-2 n"
+        className="text-center border "
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </main>

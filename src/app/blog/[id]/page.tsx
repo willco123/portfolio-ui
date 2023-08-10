@@ -1,7 +1,7 @@
 import { getMdData } from "../../../lib/read-markdown";
 import { getRouteIds } from "@/lib/get-routes";
 import { Metadata, ResolvingMetadata } from "next";
-import Content from "@/components/Content";
+import Content from "@/components/AboutContent";
 import { headers } from "next/headers";
 import { JSDOM } from "jsdom";
 import DOMPurify from "dompurify";
