@@ -21,9 +21,7 @@ export default function Routes({
     <Link
       href={`/${itemName}`}
       onClick={() => setLoading(true)}
-      className={`text-center 
-      ease-in duration-300
-      hover:
+      className={`text-center
       ${
         currentRoute === itemName ? "text-softblue dark:text-softblue-dark" : ""
       }

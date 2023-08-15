@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section className="text-center animate-fade">
+    <section className="text-center animate-fade ">
       <header>
         <h1 className="text-6xl text-softblue dark:text-softblue-dark ">
           William Cowne

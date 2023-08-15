@@ -29,19 +29,13 @@ export default function ClientLayout({
   const segment = useSelectedLayoutSegment();
 
   useEffect(() => {
+    console.log(document.adoptedStyleSheets);
     setNavFlexPos(getYCoord(placeHolderNavRef));
     setWidgetFlexPos(getYCoord(placeHolderWidgetRef));
     const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue(
-      "--initial-color-mode",
-    ) as "dark" | "light";
-    setTheme(initialColorValue);
-    let stylesheet = document.styleSheets[0];
 
-    const myRule = [...stylesheet.cssRules].find(
-      (r) => (r as CSSStyleRule).selectorText === ".test",
-    );
-
+    root.classList.contains("dark") ? setTheme("dark") : setTheme("light");
+    console.log(root.classList.contains("dark"));
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
 
@@ -101,3 +95,21 @@ export default function ClientLayout({
     </ThemeContext.Provider>
   );
 }
+
+// const styleSheet = document.styleSheets[0];
+// const myRule = [...styleSheet.cssRules].find(
+//   (r) => (r as CSSStyleRule).selectorText === ":root",
+// ) as CSSStyleRule;
+// myRule.style.setProperty("--foreground-rgb", "0,255,255");
+
+// // myRule.style.setProperty("line-height", "2");
+// // myRule.style.setProperty("color", "blue");
+// // myRule.style.setProperty("color", "black");
+
+// const styleSheetTwo = document.styleSheets[1];
+// const myRuleTwo = [...styleSheetTwo.cssRules].find(
+//   (r) => (r as CSSStyleRule).selectorText === "test",
+// ) as CSSStyleRule;
+// myRuleTwo.style.setProperty("test", "123");
+//     // const newRule = ".--foreground-rgb { color: red; background: black; }";
+// // stylesheet.insertRule(newRule, stylesheet.cssRules.length);

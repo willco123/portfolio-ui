@@ -27,7 +27,10 @@ export default function RootLayout({
       </head>
       <html lang="en">
         <body
-          className={`${inter.className} relative min-h-screen py-20 p-10 flex flex-col gap-5 justify-center`}
+          className={`
+          ${inter.className} 
+          relative min-h-screen py-20 p-10 flex flex-col gap-5 justify-center 
+           `}
         >
           <ClientLayout ids={routeIds}>{children}</ClientLayout>
           {modal}
@@ -42,3 +45,6 @@ export default function RootLayout({
 //   background:
 //     "linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)))",
 // }}
+
+// text-foreground-light dark:text-foreground-dark
+//            bg-gradient-to-b from-transparent from-background-start-light to-background-end-light dark:from-background-start-dark dark:to-background-end-dark

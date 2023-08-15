@@ -2,31 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/*determined by foreground-rgb*/
-path {
-  fill: currentColor;
-}
+@layer base {
+  /* Incase script injection fails have backup here*/
+  :root {
+    --rootblue: 181 201 227;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 205, 205, 205;
+    --background-end-rgb: 220, 220, 220;
+  }
 
-a:hover {
-  color: var(--softblue);
-}
-/* Incase script injection fails have backup here*/
-:root {
-  --softblue: #86a8d0;
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 205, 205, 205;
-  --background-end-rgb: 220, 220, 220;
-  --test: 220, 220, 220;
-}
+  :root.dark {
+    --rootblue: 54 107 158;
+    --foreground-rgb: 235, 235, 235;
+    --background-start-rgb: 50, 50, 50;
+    --background-end-rgb: 35, 35, 35;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+
+  path {
+    fill: currentColor;
+  }
+  a:hover {
+    color: rgb(var(--rootblue));
+  }
 }
 
 /* svg {
@@ -35,13 +42,6 @@ body {
 
 /* path:hover {
   color: var(--softblue);
-} */
-
-/* :root.dark {
-  --softblue: #366b9e;
-  --foreground-rgb: 235, 235, 235;
-  --background-start-rgb: 50, 50, 50;
-  --background-end-rgb: 35, 35, 35;
 } */
 
 /* @media (prefers-color-scheme: dark) {

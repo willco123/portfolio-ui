@@ -1,4 +1,4 @@
-import { setGlobalStyle } from "@/lib/set-global-style";
+import setGlobalStyle from "@/lib/set-global-style";
 
 export default function InjectTheme() {
   const stringSetGlobalStyle = `(${setGlobalStyle.toString()})()`;

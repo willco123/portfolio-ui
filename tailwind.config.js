@@ -15,11 +15,23 @@ module.exports = {
     //   body: ['"Open Sans"'],
     // },
     colors: {
+      foreground: {
+        light: "rgb(0, 0, 0)",
+        dark: "rgb(235, 235, 235)",
+      },
+      "background-start": {
+        light: "rgb(205, 205, 205)",
+        dark: "rgb(50, 50, 50)",
+      },
+      "background-end": {
+        light: "rgb(220, 220, 220)",
+        dark: "rgb(35, 35, 35)",
+      },
       softblue: {
-        light: "rgba(181, 201, 227, 1)",
-        DEFAULT: "rgba(134, 168, 208,1)",
-        dark: "rgba(54, 107, 158, 1)",
-        darker: "rgba(33, 76, 117,1)",
+        light: "rgb(var(--rootblue) / <alpha-value>)",
+        DEFAULT: "rgb(134, 168, 208)",
+        dark: "rgb(var(--rootblue) / <alpha-value>)",
+        darker: "rgb(33, 76, 117)",
       },
       dustyrose: {
         light: "rgba(228, 193, 193, 1)",
