@@ -42,7 +42,7 @@ export default function Widgets({
           </Link>
 
           <Link
-            href="WillCowneResume2023V4.pdf"
+            href="WillCowneResume2023V5.pdf"
             className="w-14 h-14 -translate-x-2 translate-y-2"
           >
             <BookLogo transform="scale(0.6)" />

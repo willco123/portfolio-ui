@@ -83,7 +83,7 @@ export const portfolioUI: ProjectType = {
     widgets.TypescriptWidget,
     widgets.FfmpegWidget,
   ],
-  website: "portfolio-ui-ruby.vercel.app ",
+  website: "https://willcowne.vercel.app/",
   picture: "/portfolio.jpg",
   videoSource: "/portfolio.webm",
 };
