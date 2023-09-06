@@ -1,5 +1,7 @@
 "use client";
 import GitHubLogo from "../../public/github-mark.svg";
+import BookLogo from "../../public/book.svg";
+import LinkedInLogo from "../..//public/linkedin.svg";
 import Link from "next/link";
 
 export default function Widgets({
@@ -36,11 +38,22 @@ export default function Widgets({
           }}
         >
           <Link href="https://github.com/willco123/">
-            <GitHubLogo transform="scale(0.6)" />
+            <GitHubLogo transform="scale(0.5)" />
           </Link>
 
-          <h3>Resume</h3>
-          <h3>In</h3>
+          <Link
+            href="WillCowneResume2023V3.pdf"
+            className="w-14 h-14 -translate-x-2 translate-y-2"
+          >
+            <BookLogo transform="scale(0.6)" />
+          </Link>
+
+          <Link
+            href="https://www.linkedin.com/in/william-cowne-22bb80159/"
+            className="w-14 h-14 "
+          >
+            <LinkedInLogo transform="scale(0.6)" />
+          </Link>
         </footer>
       )}
     </>

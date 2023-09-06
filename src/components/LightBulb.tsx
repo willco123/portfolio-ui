@@ -1,8 +1,7 @@
 "use client";
 import Bulb from "../../public/light-bulb.svg";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "./ClientLayout";
-import setGlobalStyle from "@/lib/set-global-style";
 
 export default function LightBulb() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -24,11 +23,10 @@ export default function LightBulb() {
   return (
     <Bulb
       alt="lightbulb"
-      className="justify-self-end self-center mr-1 test"
+      className="justify-self-end self-center mr-1 cursor-pointer"
       onClick={handleThemeChange}
       width={30}
       height={30}
-      style={{ color: "var(--test)" }}
     />
   );
 }

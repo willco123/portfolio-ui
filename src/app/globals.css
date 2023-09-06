@@ -3,19 +3,43 @@
 @tailwind utilities;
 
 @layer base {
-  /* Incase script injection fails have backup here*/
+  /* * {
+    outline: 1px solid rgba(255, 0, 0, 0.5);
+  } */
+
   :root {
-    --rootblue: 181 201 227;
+    --primary: 161 181 207;
+    --rootblue: 161 181 207;
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 205, 205, 205;
     --background-end-rgb: 220, 220, 220;
   }
 
   :root.dark {
+    --primary: 54 107 158;
+    --secondary: 106 13 246;
+    --rootpurple: 72 0 190;
     --rootblue: 54 107 158;
+    --rootredish: 212 29 109;
+    --rootpurplelight: 106 13 246;
     --foreground-rgb: 235, 235, 235;
     --background-start-rgb: 50, 50, 50;
     --background-end-rgb: 35, 35, 35;
+  }
+  h1 {
+    font-size: 2rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 1.75rem; /* 20px */
+    line-height: 1.6rem; /* 28px */
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 1.5rem; /* 20px */
+    line-height: 1.5rem; /* 28px */
+    font-weight: 500;
   }
 
   body {
@@ -28,13 +52,32 @@
       rgb(var(--background-start-rgb));
   }
 
-  path {
-    fill: currentColor;
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--primary)) gray;
   }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: gray;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--primary));
+    border: 3px solid rgb(var(--primary));
+  }
+
   a:hover {
-    color: rgb(var(--rootblue));
+    color: rgb(var(--primary));
   }
 }
+
+/* path {
+    fill: currentColor;
+  } */
 
 /* svg {
   fill: currentColor;

@@ -29,7 +29,7 @@ export default function RootLayout({
         <body
           className={`
           ${inter.className} 
-          relative min-h-screen py-20 p-10 flex flex-col gap-5 justify-center 
+          relative min-h-screen flex flex-col gap-5 justify-center 
            `}
         >
           <ClientLayout ids={routeIds}>{children}</ClientLayout>

@@ -56,7 +56,7 @@ export default function Navbar({
           >
             <Initials />
           </Link>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center items-center gap-4">
             {ids.map((el) => (
               <Routes key={el.id} itemName={el.id} currentRoute={segment} />
             ))}

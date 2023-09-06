@@ -1,8 +1,9 @@
+import ContactForm from "@/components/ContactForm";
+const email = process.env.EMAIL;
 export default function Contact() {
   return (
-    <div className="bg-white text-color-white h-screen w-screen border ">
-      Test
-      <div className="w-screen h-screen">A</div>
+    <div className="w-full flex-1 flex ">
+      <ContactForm email={email} />
     </div>
   );
 }

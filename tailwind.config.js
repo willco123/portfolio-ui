@@ -14,51 +14,59 @@ module.exports = {
     //   display: ["Oswald"],
     //   body: ['"Open Sans"'],
     // },
-    colors: {
-      foreground: {
-        light: "rgb(0, 0, 0)",
-        dark: "rgb(235, 235, 235)",
-      },
-      "background-start": {
-        light: "rgb(205, 205, 205)",
-        dark: "rgb(50, 50, 50)",
-      },
-      "background-end": {
-        light: "rgb(220, 220, 220)",
-        dark: "rgb(35, 35, 35)",
-      },
-      softblue: {
-        light: "rgb(var(--rootblue) / <alpha-value>)",
-        DEFAULT: "rgb(134, 168, 208)",
-        dark: "rgb(var(--rootblue) / <alpha-value>)",
-        darker: "rgb(33, 76, 117)",
-      },
-      dustyrose: {
-        light: "rgba(228, 193, 193, 1)",
-        DEFAULT: "rgba(216, 166, 166, 1)",
-        dark: "rgba(166, 112, 94, 1)",
-        darker: "rgba(124, 74, 54, 1)",
-      },
-      "subtle-white": "rgba(225, 225, 225, 1)",
-      "subtle-gray": "rgba(60, 60, 60, 1)",
-      "weak-black": "rgba(0, 0, 0, 0.3)",
-      olivegreen: {
-        light: "rgba(200, 228, 201, 1)",
-        DEFAULT: "rgba(161, 213, 164, 1)",
-        dark: "rgba(94, 121, 71, 1)",
-        darker: "rgba(66, 94, 49, 1)",
-      },
-
-      lavendergray: {
-        light: "rgba(209, 193, 227, 1)",
-        DEFAULT: " rgba(180, 164, 204, 1)",
-        dark: "rgba(126, 121, 150, 1)",
-        darker: " rgba(86, 79, 112, 1)",
-      },
-    },
     extend: {
+      colors: {
+        foreground: {
+          light: "rgb(0, 0, 0)",
+          dark: "rgb(235, 235, 235)",
+        },
+        "background-start": {
+          light: "rgb(205, 205, 205)",
+          dark: "rgb(50, 50, 50)",
+        },
+        "background-end": {
+          light: "rgb(220, 220, 220)",
+          dark: "rgb(35, 35, 35)",
+        },
+        softblue: {
+          light: "rgb(var(--primary) / <alpha-value>)",
+          DEFAULT: "rgb(134, 168, 208)",
+          dark: "rgb(var(--primary) / <alpha-value>)",
+          darker: "rgb(33, 76, 117)",
+        },
+        dustyrose: {
+          light: "rgba(228, 193, 193, 1)",
+          DEFAULT: "rgba(216, 166, 166, 1)",
+          dark: "rgba(166, 112, 94, 1)",
+          darker: "rgba(124, 74, 54, 1)",
+        },
+        "subtle-white": {
+          DEFAULT: "rgba(225, 225, 225, 1)",
+          dark: "rgb(190,190,190)",
+          darker: "rgb(160,160,160)",
+        },
+        "subtle-gray": {
+          DEFAULT: "rgba(60, 60, 60, 1)",
+          dark: "rgb(40,40,40)",
+          light: "rgb(140,140,140)",
+        },
+        "weak-black": "rgba(0, 0, 0, 0.3)",
+        olivegreen: {
+          light: "rgba(200, 228, 201, 1)",
+          DEFAULT: "rgba(161, 213, 164, 1)",
+          dark: "rgba(94, 121, 71, 1)",
+          darker: "rgba(66, 94, 49, 1)",
+        },
+
+        lavendergray: {
+          light: "rgba(209, 193, 227, 1)",
+          DEFAULT: " rgba(180, 164, 204, 1)",
+          dark: "rgba(126, 121, 150, 1)",
+          darker: " rgba(86, 79, 112, 1)",
+        },
+      },
       animation: {
-        fade: "fadeOut 5s ease-in-out",
+        fade: "fadeOut 5s ease-in",
         fadeFast: "fadeOut 1s ease-in-out",
         "slide-midUp": "slideMidUp 2s ease-in-out forwards",
         "slide-upMid": "slideUpMid 1s ease-in-out forwards",
@@ -97,7 +105,8 @@ module.exports = {
         10000: "10000ms",
       },
       dropShadow: {
-        glow: ["0px 0px 10px #366b9e"],
+        glow: "0px 0px 10px rgb(var(--primary))",
+        "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
       },
       boxShadow: {
         glow: "0px 0px 10px #366b9e",
@@ -116,5 +125,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [],
 };

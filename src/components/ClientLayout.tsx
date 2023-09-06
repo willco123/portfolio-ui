@@ -29,13 +29,12 @@ export default function ClientLayout({
   const segment = useSelectedLayoutSegment();
 
   useEffect(() => {
-    console.log(document.adoptedStyleSheets);
     setNavFlexPos(getYCoord(placeHolderNavRef));
     setWidgetFlexPos(getYCoord(placeHolderWidgetRef));
     const root = window.document.documentElement;
 
     root.classList.contains("dark") ? setTheme("dark") : setTheme("light");
-    console.log(root.classList.contains("dark"));
+
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
 
@@ -75,7 +74,15 @@ export default function ClientLayout({
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
+      <main
+        className={`${
+          segment
+            ? "w-[min(90%,1544px)] max-w-full mx-auto p-8 flex-1 mt-[67px] mb-[96px] flex flex-col justify-center gap-5 relative"
+            : ""
+        }`}
+      >
+        {children}
+      </main>
       <Navbar
         segment={segment}
         ids={ids}

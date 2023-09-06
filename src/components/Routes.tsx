@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import LoadingSVG from "../../public/loading.svg";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 export default function Routes({
   itemName,
@@ -20,15 +20,22 @@ export default function Routes({
   return (
     <Link
       href={`/${itemName}`}
-      onClick={() => setLoading(true)}
-      className={`text-center
+      onClick={() => {
+        if (itemName !== "contact") {
+          setLoading(true);
+        }
+      }}
+      className={`
       ${
         currentRoute === itemName ? "text-softblue dark:text-softblue-dark" : ""
       }
       `}
     >
-      <LoadingSVG className="animate-spin text-gray-200" />
-      {loading ? <LoadingSVG /> : itemText}
+      {loading ? (
+        <LoadingSVG className="w-7 h-7 mr-2 text-subtle-gray dark:text-subtle-white fill-softblue-light dark:fill-softblue-dark animate-spin dark:text-gray-600 fill-blue-600" />
+      ) : (
+        itemText
+      )}
     </Link>
   );
 }

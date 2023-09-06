@@ -1,9 +1,12 @@
-import Modal from "../../../components/Modal";
+import Modal from "@/components/Modal";
+import ContactForm from "@/components/ContactForm";
+const email = process.env.EMAIL;
+
 export default async function Page() {
   return (
     <>
       <Modal>
-        <div className="text-[#1da1f2] text-4xl">A</div>
+        <ContactForm email={email} />
       </Modal>
     </>
   );
