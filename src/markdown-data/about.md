@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-A **Full-stack Developer** with a drive to continously learn and leverage my skills to craft innovative solutions for complex problems.
+A **Full-stack Developer** with a drive to continuously learn and leverage my skills to craft innovative solutions for complex problems.
 I am passionate about technology and have been exploring
 this through software development for just over two years.
 

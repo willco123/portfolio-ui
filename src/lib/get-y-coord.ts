@@ -1,6 +1,6 @@
 /**
  * Gets the Y coordinate relative to the content position within its container.
- *Returns null if either the parent or container are not defined
+ *Throws if either the parent or container are not defined
  */
 export default function getYCoord(
   placeHolderNavRef: React.RefObject<HTMLDivElement>,
