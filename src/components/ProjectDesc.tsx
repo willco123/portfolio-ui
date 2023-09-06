@@ -11,7 +11,7 @@ export default function ProjectDesc({
     selectedProject;
 
   return (
-    <section className="flex flex-wrap-reverse justify-center ">
+    <section className="flex flex-wrap-reverse justify-center gap-4">
       <article className="flex-1 flex flex-col gap-3 leading-7">
         <div className="w-[350px]"></div>
         <h2 className="mb-5">
